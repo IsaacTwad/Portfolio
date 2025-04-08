@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio professionnel présentant mes compétences en informatique et mes expériences"
+    />
+    <title>Mon Portfolio | Développeur Web</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Prefetch pour améliorer les performances -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- SEO et méta-données -->
+    <meta name="author" content="Votre Nom" />
+    <meta
+      name="keywords"
+      content="portfolio, développeur web, informatique, frontend, backend"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Mon Portfolio | Développeur Web" />
+    <meta
+      property="og:description"
+      content="Portfolio professionnel présentant mes compétences en informatique et mes expériences"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://votre-domaine.com" />
+    <meta
+      property="og:image"
+      content="https://votre-domaine.com/images/og-image.jpg"
+    />
+
+    <!-- PWA support -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#2d7ae5" />
+    <link rel="apple-touch-icon" href="images/icon-192x192.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <a href="#accueil">Portfolio</a>
+          </div>
+          <div class="menu-toggle" aria-label="Ouvrir le menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+            <li><a href="#a-propos" class="nav-link">À propos</a></li>
+            <li><a href="#competences" class="nav-link">Compétences</a></li>
+            <li><a href="#projets" class="nav-link">Projets</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Section Accueil -->
+      <section id="accueil" class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="fade-in">
+              <span class="highlight">Salem Bougjdi</span>
+            </h1>
+            <p class="subtitle fade-in-delay">
+              Passionné de Technologie et de Design
+            </p>
+            <div class="cta-container fade-in-delay-2">
+              <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+              <a href="#contact" class="btn btn-secondary">Me contacter</a>
+            </div>
+            <div class="social-links fade-in-delay-3">
+              <a href="#" aria-label="LinkedIn" class="social-icon"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a
+                href="https://github.com/IsaacTwad"
+                aria-label="GitHub"
+                class="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="#" aria-label="Twitter" class="social-icon"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+          <div class="scroll-indicator" aria-hidden="true">
+            <div class="mouse">
+              <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section À propos -->
+      <section id="a-propos" class="section">
+        <div class="container">
+          <h2 class="section-title">À propos de moi</h2>
+          <div class="about-content">
+            <div class="about-image">
+              <div class="image-container">
+                <img
+                  src="images/c48.jpg"
+                  alt="Ma photo de profil"
+                  width="400"
+                  height="400"
+                />
+              </div>
+            </div>
+            <div class="about-text">
+              <p>
+                Diplômé d'un baccalauréat en Systèmes Éléctroniques et
+                Numériques obtenu en 2020, je suis passionné par le
+                développement web et les nouvelles technologies.
+              </p>
+              <p>
+                Entre 2023 et 2024, j'ai acquis une expérience professionnelle
+                en tant que câbleur ferroviaire, ce qui m'a permis de développer
+                ma rigueur, ma précision et ma capacité à travailler en équipe.
+              </p>
+              <p>
+                Je cherche maintenant à mettre à profit mes compétences
+                techniques dans le domaine du Web Design.
+              </p>
+              <div class="about-details">
+                <div class="detail-item">
+                  <i class="fas fa-graduation-cap"></i>
+                  <span>Bac Systèmes Informatiques et Numériques (2020)</span>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-briefcase"></i>
+                  <span>Câbleur Ferroviaire (2023-2024)</span>
+                </div>
+              </div>
+              <a href="#" class="btn btn-primary">Télécharger mon CV</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Compétences -->
+      <section id="competences" class="section bg-alt">
+        <div class="container">
+          <h2 class="section-title">Mes compétences</h2>
+          <div class="skills-container">
+            <div class="skill-category">
+              <h3>Développement Web</h3>
+              <div class="skills-grid">
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                  <h4>HTML5</h4>
+                  <div class="skill-bar">
+                    <div
+                      class="skill-level"
+                      style="width: 90%"
+                      aria-valuenow="90"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                  <h4>CSS3</h4>
+                  <div class="skill-bar">
+                    <div
+                      class="skill-level"
+                      style="width: 85%"
+                      aria-valuenow="85"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fab fa-js"></i></div>
+                  <h4>JavaScript</h4>
+                  <div class="skill-bar">
+                    <div
+                      class="skill-level"
+                      style="width: 75%"
+                      aria-valuenow="75"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Systèmes & Réseaux</h3>
+              <div class="skills-grid">
+                <div class="skill-item">
+                  <div class="skill-icon">
+                    <i class="fas fa-network-wired"></i>
+                  </div>
+                  <h4>Design</h4>
+                  <div class="skill-bar">
+                    <div
+                      class="skill-level"
+                      style="width: 80%"
+                      aria-valuenow="80"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fas fa-server"></i></div>
+                  <h4>Systèmes</h4>
+                  <div class="skill-bar">
+                    <div
+                      class="skill-level"
+                      style="width: 75%"
+                      aria-valuenow="75"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <h4>Sécurité</h4>
+                  <div class="skill-bar">
+                    <div
+                      class="skill-level"
+                      style="width: 70%"
+                      aria-valuenow="70"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Compétences Professionnelles</h3>
+              <div class="skills-grid">
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fas fa-users"></i></div>
+                  <h4>Travail d'équipe</h4>
+                  <div class="skill-bar">
+                    <div
+                      class="skill-level"
+                      style="width: 95%"
+                      aria-valuenow="95"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fas fa-tasks"></i></div>
+                  <h4>Gestion de projet</h4>
+                  <div class="skill-bar">
+                    <div
+                      class="skill-level"
+                      style="width: 80%"
+                      aria-valuenow="80"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon">
+                    <i class="fas fa-puzzle-piece"></i>
+                  </div>
+                  <h4>Résolution de problèmes</h4>
+                  <div class="skill-bar">
+                    <div
+                      class="skill-level"
+                      style="width: 85%"
+                      aria-valuenow="85"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Projets -->
+      <section id="projets" class="section">
+        <div class="container">
+          <h2 class="section-title">Mes projets</h2>
+          <p class="section-description">
+            Voici une sélection de mes projets personnels et professionnels.
+          </p>
+
+          <div class="projects-grid">
+            <!-- Projet 1 -->
+            <div class="project-card">
+              <div class="project-image">
+                <img
+                  src="images/SiteBricolage.png"
+                  alt="Projet 1"
+                  width="600"
+                  height="400"
+                />
+              </div>
+              <div class="project-content">
+                <h3>Site E-commerce de Bricolage</h3>
+                <p>
+                  Une plateforme e-commerce complète pour la vente de produits
+                  de bricolage. Développé avec HTML, CSS et JavaScript, ce
+                  projet inclut un catalogue de produits, un panier d'achat et
+                  un système de navigation intuitif.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="btn btn-small" aria-label="Voir le projet"
+                    ><i class="fas fa-eye"></i> Voir</a
+                  >
+                  <a
+                    href="https://github.com/IsaacTwad/SiteBricolage.git"
+                    class="btn btn-small"
+                    aria-label="Code source"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><i class="fab fa-github"></i> Code</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Projet 2 -->
+            <div class="project-card">
+              <div class="project-image">
+                <img
+                  src="images/ToDoList.png"
+                  alt="Projet 2"
+                  width="600"
+                  height="400"
+                />
+              </div>
+              <div class="project-content">
+                <h3>Application To-Do List</h3>
+                <p>
+                  Une application de gestion de tâches permettant d'ajouter,
+                  modifier et supprimer des tâches. Interface utilisateur
+                  intuitive avec stockage local des données pour une expérience
+                  fluide même hors ligne.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="btn btn-small" aria-label="Voir le projet"
+                    ><i class="fas fa-eye"></i> Voir</a
+                  >
+                  <a
+                    href="https://github.com/IsaacTwad/to-do-list.git"
+                    class="btn btn-small"
+                    aria-label="Code source"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><i class="fab fa-github"></i> Code</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Projet 3 -->
+            <div class="project-card">
+              <div class="project-image">
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  alt="Projet 3"
+                  width="600"
+                  height="400"
+                />
+              </div>
+              <div class="project-content">
+                <h3>Projet 3</h3>
+                <p>
+                  Description du projet 3. Utilisez cet espace pour décrire
+                  votre projet.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="btn btn-small" aria-label="Voir le projet"
+                    ><i class="fas fa-eye"></i> Voir</a
+                  >
+                  <a
+                    href="https://github.com/IsaacTwad"
+                    class="btn btn-small"
+                    aria-label="Code source"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><i class="fab fa-github"></i> Code</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Contact -->
+      <section id="contact" class="section bg-alt">
+        <div class="container">
+          <h2 class="section-title">Me contacter</h2>
+          <p class="section-description">
+            Vous pouvez me contacter via le formulaire ci-dessous ou directement
+            par email.
+          </p>
+
+          <div class="contact-container">
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h3>Email</h3>
+                  <p>
+                    <a href="mailto:votre.email@exemple.com"
+                      >votre.email@exemple.com</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <h3>Téléphone</h3>
+                  <p><a href="tel:+33600000000">+33 6 00 00 00 00</a></p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h3>Localisation</h3>
+                  <p>Votre ville, France</p>
+                </div>
+              </div>
+              <div class="social-links-big">
+                <a href="#" aria-label="LinkedIn" class="social-icon"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a
+                  href="https://github.com/IsaacTwad"
+                  aria-label="GitHub"
+                  class="social-icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a href="#" aria-label="Twitter" class="social-icon"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="contact-form">
+              <form
+                id="contactForm"
+                action="https://formsubmit.co/votre.email@exemple.com"
+                method="POST"
+              >
+                <div class="form-group">
+                  <label for="name">Nom</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="subject">Sujet</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    aria-required="true"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; <span id="year">2024</span> - Bougjdi Salem. Tous droits
+          réservés.
+        </p>
+        <p>
+          Conçu et développé avec
+          <i class="fas fa-heart" aria-hidden="true"></i>
+        </p>
+      </div>
+    </footer>
+
+    <a href="#accueil" class="back-to-top" aria-label="Retour en haut de page">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="script.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("sw.js")
+            .then((registration) => {
+              console.log(
+                "Service Worker enregistré avec succès:",
+                registration.scope
+              );
+            })
+            .catch((error) => {
+              console.log(
+                "Échec de l'enregistrement du Service Worker:",
+                error
+              );
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

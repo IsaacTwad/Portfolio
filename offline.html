@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hors ligne | Mon Portfolio</title>
+    <style>
+      :root {
+        --primary-color: #a5d8ff;
+        --secondary-color: #ffd0c9;
+        --text-color: #495057;
+        --dark-bg: #343a40;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f8f9fa;
+        color: var(--text-color);
+        text-align: center;
+        padding: 20px;
+      }
+
+      .offline-container {
+        max-width: 500px;
+        padding: 40px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: var(--dark-bg);
+        margin-bottom: 20px;
+        font-size: 2rem;
+      }
+
+      p {
+        margin-bottom: 25px;
+        line-height: 1.6;
+      }
+
+      .icon {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="offline-container">
+      <div class="icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="64"
+          height="64"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="1" y1="1" x2="23" y2="23"></line>
+          <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
+          <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
+          <path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
+          <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
+          <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+          <line x1="12" y1="20" x2="12.01" y2="20"></line>
+        </svg>
+      </div>
+      <h1>Vous êtes hors ligne</h1>
+      <p>
+        Il semble que vous n'êtes pas connecté à Internet. Vérifiez votre
+        connexion et réessayez.
+      </p>
+      <p>
+        Certaines parties de ce portfolio sont disponibles hors ligne, mais vous
+        aurez besoin d'une connexion pour accéder à toutes les fonctionnalités.
+      </p>
+      <a href="portfolio.html" class="btn">Réessayer</a>
+    </div>
+  </body>
+</html>

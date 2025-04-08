@@ -1,0 +1,1277 @@
+/* 
+ * FICHIER DE STYLE PRINCIPAL
+ * Ce fichier contient tous les styles pour le portfolio
+ */
+
+/* Variables et reset */
+:root {
+    /* 
+     * PALETTE DE COULEURS
+     * Définition des couleurs principales utilisées dans tout le site
+     * Ces variables permettent de changer facilement toutes les couleurs à un seul endroit
+     */
+    --primary-color: #ffffff; /* Couleur principale - blanc */
+    --secondary-color: #c7c7c7; /* Couleur secondaire - gris clair */
+    --accent-color: #439bfa; /* Couleur d'accent - bleu vif, utilisée pour mettre en valeur des éléments */
+    --light-bg: #212427; /* Arrière-plan clair (qui est en fait sombre dans ce thème) */
+    --dark-bg: #121111; /* Arrière-plan foncé - presque noir */
+    --text-color: #333a45; /* Couleur du texte standard */
+    --light-text: #6ea6de; /* Couleur du texte clair - bleu clair */
+    --border-color: #124faa; /* Couleur des bordures - bleu foncé */
+    --success-color: #3494beda; /* Couleur de succès - bleu-vert */
+    --warning-color: #ffdd57; /* Couleur d'avertissement - jaune */
+    --danger-color: #920404; /* Couleur de danger - rouge foncé */
+    --info-color: #54c5eb; /* Couleur d'information - bleu ciel */
+    
+    /* 
+     * TYPOGRAPHIE
+     * Définition des tailles et polices de caractères
+     */
+    --font-family: 'Poppins', sans-serif; /* Police principale du site */
+    --h1-size: 3.5rem; /* Taille des titres h1 (très grands) */
+    --h2-size: 2.5rem; /* Taille des titres h2 (grands) */
+    --h3-size: 1.75rem; /* Taille des titres h3 (moyens) */
+    --h4-size: 1.3rem; /* Taille des titres h4 (petits) */
+    --base-size: 1rem; /* Taille de base du texte (1rem = 16px par défaut) */
+    --small-size: 0.875rem; /* Taille du petit texte */
+    
+    /* 
+     * ESPACEMENT
+     * Variables pour les marges et rembourrages (padding)
+     */
+    --spacing-xs: 0.25rem; /* Très petit espacement (4px) */
+    --spacing-sm: 0.5rem; /* Petit espacement (8px) */
+    --spacing-md: 1rem; /* Espacement moyen (16px) */
+    --spacing-lg: 2rem; /* Grand espacement (32px) */
+    --spacing-xl: 4rem; /* Très grand espacement (64px) */
+    
+    /* 
+     * ANIMATIONS
+     * Durées et effets des transitions/animations
+     */
+    --transition-fast: 0.3s ease; /* Transition rapide (0.3 secondes) */
+    --transition-medium: 0.5s ease; /* Transition moyenne (0.5 secondes) */
+    --transition-slow: 0.8s ease; /* Transition lente (0.8 secondes) */
+    
+    /* 
+     * OMBRES
+     * Différents niveaux d'ombres pour donner de la profondeur
+     */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08); /* Petite ombre */
+    --shadow-md: 0 6px 10px rgba(0, 0, 0, 0.12); /* Ombre moyenne */
+    --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.15); /* Grande ombre */
+    
+    /* 
+     * ARRONDIS DES COINS
+     * Différents niveaux d'arrondissement des coins
+     */
+    --radius-sm: 4px; /* Coins légèrement arrondis */
+    --radius-md: 8px; /* Coins moyennement arrondis */
+    --radius-lg: 16px; /* Coins très arrondis */
+    --radius-full: 50%; /* Forme complètement ronde (cercle) */
+}
+
+/* 
+ * RESET ET STYLES DE BASE
+ * Réinitialisation des styles par défaut du navigateur
+ */
+* {
+    margin: 0; /* Supprime toutes les marges externes */
+    padding: 0; /* Supprime tous les rembourrages internes */
+    box-sizing: border-box; /* Inclut les bordures et paddings dans la largeur/hauteur totale */
+}
+
+html {
+    scroll-behavior: smooth; /* Effet de défilement doux lors de la navigation par ancre (#) */
+    scroll-padding-top: 80px; /* Espace en haut lors du défilement vers une ancre (pour la navigation fixe) */
+}
+
+body {
+    font-family: var(--font-family); /* Utilise la police définie dans les variables */
+    font-size: var(--base-size); /* Utilise la taille de base définie dans les variables */
+    line-height: 1.6; /* Hauteur de ligne standard pour une bonne lisibilité */
+    color: var(--text-color); /* Couleur de texte standard */
+    background-color: var(--light-bg); /* Couleur d'arrière-plan du site */
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: var(--primary-color); /* Couleur des liens */
+    transition: color var(--transition-fast); /* Animation douce lors du changement de couleur */
+}
+
+a:hover {
+    color: var(--secondary-color); /* Couleur des liens au survol */
+}
+
+img {
+    max-width: 100%; /* Empêche les images de dépasser leur conteneur */
+    height: auto; /* Maintient les proportions des images */
+    display: block; /* Évite l'espace sous les images (comportement inline) */
+}
+
+ul, ol {
+    list-style: none; /* Supprime les puces et numéros des listes */
+}
+
+button, input, textarea {
+    font-family: var(--font-family); /* Assure que les formulaires utilisent la même police */
+}
+
+/* 
+ * CONTAINER ET GRILLES
+ * Structure principale pour centrer le contenu
+ */
+.container {
+    width: 90%; /* Largeur de 90% de la fenêtre */
+    max-width: 1200px; /* Largeur maximale pour les grands écrans */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    padding: 0 var(--spacing-md); /* Ajoute un espacement intérieur horizontal */
+}
+
+/* Classes d'utilité */
+.text-center {
+    text-align: center; /* Centre le texte horizontalement */
+}
+
+.bg-alt {
+    background-color: #f1f3f5; /* Couleur d'arrière-plan alternative */
+}
+
+/* Typographie */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: var(--spacing-md); /* Espacement sous les titres */
+    line-height: 1.2; /* Hauteur de ligne plus serrée pour les titres */
+    font-weight: 600; /* Graisse semi-grasse */
+    color: white; /* Couleur blanche pour tous les titres */
+}
+
+h1 {
+    font-size: var(--h1-size); /* Utilise la taille h1 définie dans les variables */
+}
+
+h2 {
+    font-size: var(--h2-size); /* Utilise la taille h2 définie dans les variables */
+}
+
+h3 {
+    font-size: var(--h3-size); /* Utilise la taille h3 définie dans les variables */
+}
+
+h4 {
+    font-size: var(--h4-size); /* Utilise la taille h4 définie dans les variables */
+}
+
+p {
+    margin-bottom: var(--spacing-md); /* Espacement sous les paragraphes */
+}
+
+.section-title {
+    text-align: center; /* Centre le titre horizontalement */
+    margin-bottom: var(--spacing-xl); /* Grand espacement sous le titre */
+    position: relative; /* Permet le positionnement absolu de l'élément ::after */
+    color: var(--dark-bg); /* Couleur sombre pour contraster */
+}
+
+.section-title::after {
+    content: ''; /* Nécessaire pour les pseudo-éléments */
+    display: block; /* Affiche comme un bloc */
+    width: 80px; /* Largeur de la ligne */
+    height: 4px; /* Hauteur/épaisseur de la ligne */
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); /* Dégradé de couleurs */
+    margin: var(--spacing-sm) auto 0; /* Centré avec espace au-dessus */
+    border-radius: var(--radius-full); /* Bords arrondis */
+}
+
+.section-description {
+    text-align: center; /* Centre le texte horizontalement */
+    max-width: 800px; /* Largeur maximale pour une bonne lisibilité */
+    margin: -2rem auto 3rem; /* Marge négative en haut pour rapprocher du titre */
+    color: #6c757d; /* Couleur de texte grise */
+}
+
+.highlight {
+    color: var(--secondary-color); /* Couleur différente pour le texte en surbrillance */
+    position: relative; /* Pour le positionnement de l'élément ::after (si utilisé) */
+    display: inline-block; /* Permet de définir des dimensions */
+}
+
+.highlight::after {
+    content: none; /* Désactive le pseudo-élément */
+}
+
+/* Section À propos avec fond bois.jpg */
+#a-propos {
+    position: relative; /* Pour positionner l'overlay et le contenu */
+    background-image: url('images/bois.jpg'); /* Image de fond */
+    background-size: cover; /* Redimensionne l'image pour couvrir toute la section */
+    background-position: center; /* Centre l'image */
+    background-attachment: fixed; /* Effet parallaxe (image fixe pendant le défilement) */
+    color: white; /* Texte blanc pour contraster avec le fond sombre */
+}
+
+#a-propos::before {
+    content: ''; /* Nécessaire pour les pseudo-éléments */
+    position: absolute; /* Positionnement absolu par rapport à la section */
+    top: 0; /* Aligné au bord supérieur */
+    left: 0; /* Aligné au bord gauche */
+    width: 100%; /* Couvre toute la largeur */
+    height: 100%; /* Couvre toute la hauteur */
+    background: rgba(0, 0, 0, 0.7); /* Noir semi-transparent */
+    z-index: 0; /* Couche de base */
+}
+
+#a-propos .container {
+    position: relative; /* Crée un nouveau contexte d'empilement */
+    z-index: 1; /* Place au-dessus de l'overlay */
+}
+
+#a-propos .section-title {
+    color: white; /* Titre en blanc pour contraster avec le fond sombre */
+}
+
+#a-propos .about-text {
+    color: rgba(255, 255, 255, 0.9); /* Blanc légèrement transparent */
+}
+
+#a-propos .detail-item {
+    color: rgba(255, 255, 255, 0.9); /* Blanc légèrement transparent */
+}
+
+#a-propos .detail-item i {
+    color: var(--secondary-color); /* Couleur d'accent pour les icônes */
+}
+
+/* Modification de l'arrière-plan de l'image de profil pour qu'elle se démarque */
+#a-propos .image-container {
+    border: 4px solid rgba(255, 255, 255, 0.3); /* Bordure blanche semi-transparente */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre portée pour effet de profondeur */
+}
+
+#a-propos .image-container::before {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, transparent 100%); /* Dégradé diagonal */
+    opacity: 0.5; /* Semi-transparent */
+}
+
+/* 
+ * HEADER ET NAVIGATION
+ * Styles pour la barre de navigation fixe en haut
+ */
+header {
+    position: fixed; /* Fixe l'en-tête en haut de la fenêtre */
+    top: 0; /* Aligné au bord supérieur de la fenêtre */
+    left: 0; /* Aligné au bord gauche de la fenêtre */
+    width: 100%; /* Couvre toute la largeur de la fenêtre */
+    z-index: 1000; /* Toujours au-dessus des autres éléments */
+    background-color: rgba(32, 35, 42, 0.95); /* Fond sombre semi-transparent */
+    backdrop-filter: blur(10px); /* Effet de flou du fond (ne fonctionne pas sur tous les navigateurs) */
+    box-shadow: var(--shadow-sm); /* Légère ombre pour effet de profondeur */
+    transition: all var(--transition-fast); /* Animation douce pour les changements */
+}
+
+.navbar {
+    display: flex; /* Disposition flexible */
+    justify-content: space-between; /* Espacement maximal entre les éléments */
+    align-items: center; /* Alignement vertical au centre */
+    padding: var(--spacing-md) 0; /* Rembourrage vertical uniquement */
+}
+
+/* Style du logo */
+.logo a {
+    font-size: 1.5rem; /* Taille de police plus grande */
+    font-weight: 700; /* Police très grasse */
+    color: white; /* Texte blanc */
+    position: relative; /* Pour le positionnement de la ligne au survol */
+}
+
+/* Effet de soulignement au survol du logo */
+.logo a::after {
+    content: ''; /* Nécessaire pour les pseudo-éléments */
+    position: absolute; /* Positionnement absolu par rapport au logo */
+    bottom: -4px; /* Légèrement en-dessous du texte */
+    left: 0; /* Aligné à gauche */
+    width: 0; /* Initialement invisible (largeur zéro) */
+    height: 2px; /* Hauteur de la ligne */
+    background-color: var(--secondary-color); /* Couleur de la ligne */
+    transition: width var(--transition-fast); /* Animation de la largeur */
+}
+
+/* La ligne apparaît au survol du logo */
+.logo a:hover::after {
+    width: 100%; /* Couvre toute la largeur au survol */
+}
+
+/* Menu de navigation */
+.nav-menu {
+    display: flex; /* Disposition flexible */
+    align-items: center; /* Alignement vertical au centre */
+}
+
+/* Éléments du menu */
+.nav-menu li {
+    margin-left: var(--spacing-lg); /* Espacement entre les éléments */
+}
+
+/* Liens du menu */
+.nav-link {
+    color: rgba(255, 255, 255, 0.85); /* Blanc légèrement transparent */
+    font-weight: 500; /* Police semi-grasse */
+    position: relative; /* Pour le positionnement de la ligne au survol */
+    padding: var(--spacing-xs) 0; /* Petit rembourrage vertical */
+}
+
+/* Effet de soulignement au survol des liens */
+.nav-link::after {
+    content: ''; /* Nécessaire pour les pseudo-éléments */
+    position: absolute; /* Positionnement absolu par rapport au lien */
+    bottom: 0; /* Aligné au bas du lien */
+    left: 0; /* Aligné à gauche */
+    width: 0; /* Initialement invisible (largeur zéro) */
+    height: 2px; /* Hauteur de la ligne */
+    background-color: var(--secondary-color); /* Couleur de la ligne */
+    transition: width var(--transition-fast); /* Animation de la largeur */
+}
+
+/* La ligne apparaît au survol ou sur le lien actif */
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%; /* Couvre toute la largeur */
+}
+
+/* Changement de couleur au survol */
+.nav-link:hover {
+    color: white; /* Blanc pur au survol */
+}
+
+/* Bouton du menu hamburger (pour mobile) */
+.menu-toggle {
+    display: none; /* Caché par défaut, visible uniquement sur mobile */
+    flex-direction: column; /* Empile les barres verticalement */
+    justify-content: space-between; /* Espace les barres uniformément */
+    width: 30px; /* Largeur du bouton */
+    height: 21px; /* Hauteur du bouton */
+    cursor: pointer; /* Curseur de type pointeur au survol */
+}
+
+/* Barres du menu hamburger */
+.bar {
+    width: 100%; /* Largeur complète */
+    height: 3px; /* Hauteur de chaque barre */
+    background-color: white; /* Couleur blanche */
+    border-radius: var(--radius-full); /* Bords arrondis */
+    transition: all var(--transition-fast); /* Animation pour l'effet de transformation */
+}
+
+/* 
+ * SECTION HERO/ACCUEIL
+ * Grande section d'accueil avec image de fond
+ */
+.hero {
+    display: flex; /* Disposition flexible */
+    flex-direction: column; /* Empile les éléments verticalement */
+    align-items: center; /* Centre horizontalement */
+    justify-content: center; /* Centre verticalement */
+    min-height: 100vh; /* Hauteur minimale de 100% de la hauteur de la fenêtre */
+    padding: var(--spacing-xl) 0; /* Grand espacement vertical */
+    position: relative; /* Pour positionner les éléments internes */
+    overflow: hidden; /* Cache tout contenu qui déborde */
+    background-color: transparent; /* Fond transparent */
+    background-image: url('images/wallpaper.jpg'); /* Image de fond */
+    background-size: cover; /* Couvre toute la section */
+    background-position: center; /* Centre l'image */
+    background-attachment: fixed; /* Effet parallaxe (image fixe pendant le défilement) */
+}
+
+/* Overlay sombre pour améliorer la lisibilité */
+.hero::before {
+    content: ''; /* Nécessaire pour les pseudo-éléments */
+    position: absolute; /* Positionnement absolu */
+    top: 0; /* Aligné en haut */
+    left: 0; /* Aligné à gauche */
+    width: 100%; /* Couvre toute la largeur */
+    height: 100%; /* Couvre toute la hauteur */
+    background: rgba(0, 0, 0, 0.6); /* Noir semi-transparent */
+    z-index: 0; /* Couche de base */
+}
+
+/* Contenu principal de la section hero */
+.hero-content {
+    text-align: center; /* Centre le texte */
+    max-width: 800px; /* Largeur maximale */
+    z-index: 2; /* Au-dessus de l'overlay */
+    position: relative; /* Crée un nouveau contexte d'empilement */
+    color: white; /* Texte blanc */
+}
+
+/* Titre principal (votre nom) */
+.hero h1 {
+    font-size: 4rem; /* Très grande taille */
+    margin-bottom: var(--spacing-md); /* Espacement en dessous */
+    animation: fadeUp 1s forwards; /* Animation d'apparition */
+    color: white; /* Garantit que le texte est blanc */
+}
+
+/* Sous-titre (votre profession) */
+.subtitle {
+    font-size: 1.5rem; /* Grande taille */
+    margin-bottom: var(--spacing-lg); /* Espacement en dessous */
+    color: rgba(255, 255, 255, 0.9); /* Blanc légèrement transparent */
+    animation: fadeUp 1s 0.3s forwards; /* Animation avec délai */
+    opacity: 0; /* Initialement invisible */
+}
+
+/* Conteneur des boutons d'appel à l'action */
+.cta-container {
+    display: flex; /* Disposition flexible */
+    justify-content: center; /* Centre horizontalement */
+    gap: var(--spacing-md); /* Espacement entre les boutons */
+    margin-bottom: var(--spacing-lg); /* Espacement en dessous */
+    animation: fadeUp 1s 0.5s forwards; /* Animation avec délai */
+    opacity: 0; /* Initialement invisible */
+}
+
+/* Liens sociaux */
+.social-links {
+    display: flex; /* Disposition flexible */
+    justify-content: center; /* Centre horizontalement */
+    gap: var(--spacing-md); /* Espacement entre les icônes */
+    animation: fadeUp 1s 0.7s forwards; /* Animation avec délai */
+    opacity: 0; /* Initialement invisible */
+}
+
+/* Icônes des réseaux sociaux */
+.social-icon {
+    display: flex; /* Disposition flexible */
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    width: 40px; /* Largeur fixe */
+    height: 40px; /* Hauteur fixe (carré) */
+    border-radius: var(--radius-full); /* Forme ronde */
+    background-color: rgba(255, 255, 255, 0.1); /* Blanc très transparent */
+    color: white; /* Icône blanche */
+    font-size: var(--base-size); /* Taille standard */
+    box-shadow: var(--shadow-sm); /* Légère ombre */
+    transition: all var(--transition-fast); /* Animation au survol */
+    backdrop-filter: blur(5px); /* Effet de flou du fond */
+}
+
+/* Effet au survol des icônes sociales */
+.social-icon:hover {
+    transform: translateY(-3px); /* Monte légèrement */
+    box-shadow: var(--shadow-md); /* Ombre plus prononcée */
+    background-color: var(--primary-color); /* Change de couleur */
+    color: rgb(10, 44, 130); /* Garantit que l'icône reste blanche */
+}
+
+/* Variante plus grande des icônes sociales (utilisée dans la section contact) */
+.social-links-big .social-icon {
+    width: 50px; /* Plus grande largeur */
+    height: 50px; /* Plus grande hauteur */
+    font-size: 1.2rem; /* Plus grande taille d'icône */
+}
+
+/* 
+ * INDICATEUR DE DÉFILEMENT
+ * Animation pour montrer qu'on peut défiler vers le bas
+ */
+.scroll-indicator {
+    position: absolute; /* Positionnement absolu */
+    bottom: var(--spacing-xl); /* Distance du bas */
+    left: 50%; /* Centré horizontalement */
+    transform: translateX(-50%); /* Ajustement pour un centrage parfait */
+    z-index: 2; /* Au-dessus de l'overlay */
+    animation: fadeIn 1s 1s forwards, bounce 2s 1s infinite; /* Animations: apparition puis rebond infini */
+    opacity: 0; /* Initialement invisible */
+}
+
+/* Style de la souris (conteneur) */
+.mouse {
+    width: 30px; /* Largeur */
+    height: 50px; /* Hauteur */
+    border: 2px solid white; /* Bordure blanche */
+    border-radius: 20px; /* Coins très arrondis pour forme ovale */
+    position: relative; /* Pour le positionnement de la roue */
+    margin: 0 auto var(--spacing-sm); /* Centrage horizontal et marge en bas */
+}
+
+/* Style de la roue de la souris (point qui se déplace) */
+.wheel {
+    width: 6px; /* Largeur */
+    height: 6px; /* Hauteur */
+    background-color: white; /* Couleur blanche */
+    border-radius: var(--radius-full); /* Forme ronde */
+    position: absolute; /* Positionnement absolu dans la souris */
+    top: 10px; /* Position initiale */
+    left: 50%; /* Centré horizontalement */
+    transform: translateX(-50%); /* Ajustement pour un centrage parfait */
+    animation: scroll 1.5s infinite; /* Animation de défilement infinie */
+}
+
+/* Flèche en dessous de la souris */
+.arrow {
+    display: flex; /* Disposition flexible */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+}
+
+/* Style de la flèche (forme créée avec des bordures) */
+.arrow span {
+    display: block; /* Affichage en bloc */
+    width: 10px; /* Largeur */
+    height: 10px; /* Hauteur */
+    border-bottom: 2px solid white; /* Bordure bas */
+    border-right: 2px solid white; /* Bordure droite */
+    transform: rotate(45deg); /* Rotation pour former une flèche */
+}
+
+/* 
+ * BOUTONS
+ * Styles pour tous les boutons du site
+ */
+.btn {
+    display: inline-block; /* Permet de définir largeur et hauteur */
+    padding: 0.75rem 1.5rem; /* Rembourrage intérieur */
+    border-radius: var(--radius-md); /* Coins arrondis */
+    font-weight: 500; /* Police semi-grasse */
+    cursor: pointer; /* Curseur de type pointeur au survol */
+    transition: all var(--transition-fast); /* Animation au survol */
+    text-transform: uppercase; /* Texte en majuscules */
+    letter-spacing: 1px; /* Espacement des lettres */
+    font-size: 0.9rem; /* Taille légèrement réduite */
+    border: none; /* Pas de bordure */
+    box-shadow: var(--shadow-md); /* Ombre moyenne */
+}
+
+/* Bouton principal */
+.btn-primary {
+    background-color: var(--primary-color); /* Fond avec couleur principale */
+    color: rgb(6, 3, 3); /* Texte presque noir */
+}
+
+/* Effet au survol du bouton principal */
+.btn-primary:hover {
+    background-color: var(--accent-color); /* Change de couleur au survol */
+    transform: translateY(-3px); /* Monte légèrement */
+    box-shadow: var(--shadow-lg); /* Ombre plus prononcée */
+}
+
+/* Bouton secondaire */
+.btn-secondary {
+    background-color: transparent; /* Fond transparent */
+    color: rgb(254, 254, 254); /* Texte blanc */
+    border: 2px solid rgb(245, 245, 245); /* Bordure blanche */
+}
+
+/* Effet au survol du bouton secondaire */
+.btn-secondary:hover {
+    background-color: white; /* Fond devient blanc */
+    color: var(--dark-bg); /* Texte devient foncé */
+    transform: translateY(-3px); /* Monte légèrement */
+    box-shadow: var(--shadow-lg); /* Ombre plus prononcée */
+}
+
+/* Variante plus petite des boutons */
+.btn-small {
+    padding: 0.5rem 1rem; /* Rembourrage réduit */
+    font-size: 0.8rem; /* Texte plus petit */
+}
+
+/* 
+ * SECTIONS
+ * Style de base pour toutes les sections du site
+ */
+.section {
+    padding: var(--spacing-xl) 0; /* Grand espacement vertical */
+    position: relative; /* Pour le positionnement des éléments internes */
+}
+
+/* 
+ * SECTION COMPÉTENCES
+ * Styles spécifiques pour la section des compétences
+ */
+#competences {
+    background-color: var(--dark-bg); /* Fond très sombre */
+    color: white; /* Texte blanc */
+}
+
+/* Titre de la section compétences */
+#competences .section-title {
+    color: white; /* Blanc pour contraster avec le fond sombre */
+}
+
+/* Cartes de compétences */
+#competences .skill-item {
+    background-color: rgba(70, 69, 72, 0.1); /* Fond très transparent */
+    backdrop-filter: blur(5px); /* Effet de flou du fond */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordure blanche très légère */
+}
+
+/* Icônes des compétences */
+#competences .skill-icon {
+    color: var(--secondary-color); /* Couleur d'accent pour les icônes */
+}
+
+/* Titres des compétences */
+#competences h4 {
+    color: white; /* Texte blanc */
+}
+
+/* Barre de progression (arrière-plan) */
+#competences .skill-bar {
+    background-color: rgba(255, 255, 255, 0.1); /* Fond blanc très transparent */
+}
+
+/* 
+ * SECTION PROJETS
+ * Styles pour la section portfolio/projets
+ */
+#projets {
+    background-color: transparent; /* Fond transparent */
+    position: relative; /* Pour le positionnement des éléments internes */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('images/bois.jpg'); /* Superposition d'un dégradé blanc sur l'image */
+    background-size: cover; /* Couvre toute la section */
+    background-position: center; /* Centre l'image */
+    background-attachment: fixed; /* Effet parallaxe (image fixe pendant le défilement) */
+}
+
+/* Pseudo-élément pour overlay si nécessaire */
+#projets::before {
+    content: ''; /* Nécessaire pour les pseudo-éléments */
+    position: absolute; /* Positionnement absolu */
+    top: 0; /* Aligné en haut */
+    left: 0; /* Aligné à gauche */
+    width: 100%; /* Couvre toute la largeur */
+    height: 100%; /* Couvre toute la hauteur */
+    z-index: 0; /* Couche de base */
+}
+
+/* Conteneur pour placer le contenu au-dessus de l'overlay */
+#projets .container {
+    position: relative; /* Crée un nouveau contexte d'empilement */
+    z-index: 1; /* Place au-dessus de l'overlay */
+}
+
+/* Titre de la section projets */
+#projets .section-title {
+    color: var(--dark-bg); /* Texte foncé */
+    font-weight: 700; /* Police très grasse */
+}
+
+/* Description de la section projets */
+#projets .section-description {
+    color: var(--dark-bg); /* Texte foncé */
+    font-weight: 500; /* Police semi-grasse */
+}
+
+/* 
+ * SECTION CONTACT
+ * Styles pour la section de formulaire de contact
+ */
+#contact {
+    background-color: var(--dark-bg); /* Fond très sombre */
+    position: relative; /* Pour le positionnement des éléments internes */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('images/wallpaper.jpg'); /* Superposition d'un dégradé noir sur l'image */
+    background-size: cover; /* Couvre toute la section */
+    background-position: center; /* Centre l'image */
+    background-attachment: fixed; /* Effet parallaxe (image fixe pendant le défilement) */
+    color: white; /* Texte blanc */
+}
+
+/* Titre de la section contact */
+#contact .section-title {
+    color: white; /* Texte blanc */
+}
+
+/* Description de la section contact */
+#contact .section-description {
+    color: rgba(255, 255, 255, 0.7); /* Blanc semi-transparent */
+}
+
+/* Style du formulaire de contact */
+#contact .contact-form {
+    background-color: rgba(255, 255, 255, 0.05); /* Fond blanc très transparent */
+    padding: var(--spacing-lg); /* Grand rembourrage */
+    border-radius: var(--radius-md); /* Coins arrondis */
+    backdrop-filter: blur(10px); /* Effet de flou du fond */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordure blanche très légère */
+}
+
+/* Étiquettes des champs de formulaire */
+#contact label {
+    color: white; /* Texte blanc */
+}
+
+/* Champs de saisie et zones de texte */
+#contact input, #contact textarea {
+    background-color: rgba(255, 255, 255, 0.1); /* Fond blanc très transparent */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure blanche légère */
+    color: white; /* Texte blanc */
+}
+
+/* Style des champs de formulaire au focus */
+#contact input:focus, #contact textarea:focus {
+    background-color: rgba(255, 255, 255, 0.15); /* Fond légèrement plus clair au focus */
+    border-color: var(--secondary-color); /* Bordure avec couleur d'accent */
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.25); /* Léger halo autour */
+}
+
+/* Style des placeholders dans les champs de formulaire */
+#contact input::placeholder, #contact textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5); /* Blanc semi-transparent */
+}
+
+/* Icônes dans les informations de contact */
+#contact .contact-item i {
+    color: var(--secondary-color); /* Couleur d'accent pour les icônes */
+}
+
+/* Titres dans les informations de contact */
+#contact .contact-item h3 {
+    color: white; /* Texte blanc */
+}
+
+/* Liens dans les informations de contact */
+#contact .contact-item a {
+    color: rgba(255, 255, 255, 0.8); /* Blanc légèrement transparent */
+    transition: color var(--transition-fast); /* Animation au survol */
+}
+
+/* Effet au survol des liens de contact */
+#contact .contact-item a:hover {
+    color: var(--secondary-color); /* Change de couleur au survol */
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.image-container {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transform: rotate(3deg);
+    transition: transform var(--transition-medium);
+}
+
+.image-container:hover {
+    transform: rotate(0);
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, transparent 100%);
+    opacity: 0.3;
+    transition: opacity var(--transition-medium);
+    z-index: 1;
+}
+
+.image-container:hover::before {
+    opacity: 0.5;
+}
+
+.about-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.about-details {
+    margin: var(--spacing-lg) 0;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.detail-item i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-right: var(--spacing-md);
+    width: 25px;
+}
+
+/* Skills Section */
+.skills-container {
+    margin-top: var(--spacing-xl);
+}
+
+.skill-category {
+    margin-bottom: var(--spacing-xl);
+}
+
+.skill-category h3 {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.skill-item {
+    background-color: white;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.skill-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.skill-item h4 {
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+.skill-bar {
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-top: var(--spacing-sm);
+}
+
+.skill-level {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: var(--radius-full);
+    position: relative;
+    width: 0;
+    animation: progressBar 1.5s ease-in-out forwards;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.project-card {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(5px);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.project-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+}
+
+.project-card:hover .project-image::before {
+    opacity: 1;
+}
+
+.project-image img {
+    transition: transform var(--transition-medium);
+    width: 100%;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: var(--spacing-lg);
+}
+
+.project-content h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--dark-bg);
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-md) 0;
+}
+
+.tech-tag {
+    background-color: var(--accent-color);
+    color: white;
+    font-size: var(--small-size);
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+}
+
+.project-links {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.project-links .btn-small {
+    background-color: var(--primary-color);
+    color: rgb(10, 55, 158);
+}
+
+.project-links .btn-small:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Contact Section */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-lg);
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-right: var(--spacing-md);
+    width: 30px;
+}
+
+.contact-item h3 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.social-links-big {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.contact-form {
+    flex: 2;
+    min-width: 300px;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+}
+
+input, textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--base-size);
+    background-color: white;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(165, 216, 255, 0.25);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: var(--spacing-sm);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+footer .fa-heart {
+    color: var(--secondary-color);
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-fast);
+    z-index: 99;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes progressBar {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+        top: 10px;
+    }
+    100% {
+        opacity: 0;
+        top: 30px;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Animation classes */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn var(--transition-medium) forwards;
+}
+
+.fade-in-delay {
+    opacity: 0;
+    animation: fadeIn var(--transition-medium) 0.3s forwards;
+}
+
+.fade-in-delay-2 {
+    opacity: 0;
+    animation: fadeIn var(--transition-medium) 0.6s forwards;
+}
+
+.fade-in-delay-3 {
+    opacity: 0;
+    animation: fadeIn var(--transition-medium) 0.9s forwards;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+    :root {
+        --h1-size: 3rem;
+        --h2-size: 2.2rem;
+        --h3-size: 1.5rem;
+        --h4-size: 1.2rem;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .detail-item {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right var(--transition-medium);
+        box-shadow: var(--shadow-lg);
+        z-index: 1001;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-menu li {
+        margin: var(--spacing-md) 0;
+    }
+    
+    .menu-toggle {
+        display: flex;
+        z-index: 1002;
+    }
+    
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-container {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --h1-size: 2.5rem;
+        --h2-size: 2rem;
+        --h3-size: 1.3rem;
+        --h4-size: 1.1rem;
+        --base-size: 0.95rem;
+    }
+    
+    .container {
+        width: 95%;
+    }
+    
+    .section {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+}
